@@ -1,6 +1,7 @@
 Didiaodian::Application.routes.draw do
   resources :pages, :only => [:index, :show]
 
+  match 'node/:slug' => 'nodes#show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

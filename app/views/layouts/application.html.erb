@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Didiaodian</title>
+  <title>低调点</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Home", "/" %>
-<%= yield %>
-
+<div class="navbar" >
+  <div class="navbar-inner">
+    <div class="container">
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <a class="brand" href="/">低调点</a>
+      <ul class="nav">
+        <li class="active">
+          <a href="#">首页</a>
+        </li>
+        <% Node.all.each do |node| %>
+          <li><a href="/node/<%= node.slug %>"><%= node.name %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <%= yield %>
+</div>
 </body>
 </html>
