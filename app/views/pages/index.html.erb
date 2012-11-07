@@ -1,5 +1,8 @@
+<div class="hero-unit">
+  <% @pages.each do |page| %>
+	<h2><%= page.title %></h2>
+	<p><%= page.body %></p>
+  <% end %>
+</div>
 
-<% @pages.each do |page| %>
-  <h2><%= page.title %></h2><br/>
-  <%= page.body %><hr/>
-<% end %>
+

@@ -7,24 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar" >
+
+<div class="container">
+  <div class="navbar" >
   <div class="navbar-inner">
     <div class="container">
       <!-- Be sure to leave the brand out there if you want it shown -->
       <a class="brand" href="/">低调点</a>
       <ul class="nav">
         <li class="active">
-          <a href="#">首页</a>
+          <a href="/">首页</a>
         </li>
         <% Node.all.each do |node| %>
           <li><a href="/node/<%= node.slug %>"><%= node.name %></a></li>
         <% end %>
+        <li>
+          <a href="/about">About</a>
+        </li>
       </ul>
     </div>
   </div>
 </div>
-<div class="container">
-  <%= yield %>
+  <div class="row">
+    <div class="span8"><%= yield %></div>
+    <div class="span4">
+      di diao de sheng huo, di diao de yu le
+    </div>
+  </div>
 </div>
 </body>
 </html>
